@@ -14,4 +14,8 @@ node {
     stage("Build") {
         sh "npm run build --prod"
     }
+    
+    stage("Copy") {
+        sh "cp -a /var/lib/jenkins/workspace/angular-pipeline/dist/jenkins-test/. /var/www/jenkins_test/html/"
+    }
 }
